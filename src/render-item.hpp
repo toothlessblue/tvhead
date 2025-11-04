@@ -1,3 +1,5 @@
+#pragma once
+
 class RenderItem {
     public:
         int zIndex = 0;

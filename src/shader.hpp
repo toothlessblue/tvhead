@@ -1,4 +1,5 @@
-#include "gl2.h"
+#pragma once
+#include <GLES3/gl3.h>
 
 class Shader {
     private:
@@ -7,7 +8,7 @@ class Shader {
         void check(GLuint shader);
 
     public:
-        Shader(char* vertSource, char* fragSource);
+        Shader(const char* vertSource, const char* fragSource);
 
         void use();
 };

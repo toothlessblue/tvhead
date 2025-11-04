@@ -6,7 +6,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE $ENV{CMAKE_BUILD_TYPE})
 
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE "Release")
+    set(CMAKE_BUILD_TYPE "Debug")
 endif()
 
 message(${CMAKE_BUILD_TYPE})
@@ -25,7 +25,10 @@ add_executable(tvhead
     src/main.cpp 
     src/gl-init.cpp
     src/render-item.cpp
-    src/render-list.cpp
+    src/render-pipeline.cpp
+    src/shader.cpp
+
+    src/render-items/image-item.cpp
 
     lib/led-matrix.cc
     lib/framebuffer.cc
@@ -40,7 +43,7 @@ add_executable(tvhead
 )
 
 target_include_directories(tvhead PRIVATE /usr/include/libdrm)
-target_include_directories(tvhead PRIVATE /usr/include/GLES2)
+target_include_directories(tvhead PRIVATE /usr/include/GLES3)
 target_link_libraries(tvhead -ldrm -lgbm -lEGL -lGLESv2)
 
 target_include_directories(tvhead PRIVATE include)

@@ -1,3 +1,4 @@
+#pragma once
 #include "./render-item.hpp"
 #include <vector>
 

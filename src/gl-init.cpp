@@ -3,7 +3,7 @@
 #include <xf86drmMode.h>
 #include <gbm.h>
 #include <EGL/egl.h>
-#include <GLES2/gl2.h>
+#include <GLES3/gl3.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
