@@ -1,3 +1,9 @@
+Note to the wanderers that come across this place.
+
+Beware! There be monsters here.
+
+This repo's unfinished, unfriendly, and lots of code is not properly accreddited.
+
 # Raspberry pi installation requirements
 
 Installing bonnet software
