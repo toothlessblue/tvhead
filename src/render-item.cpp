@@ -4,7 +4,7 @@ RenderItem::RenderItem() {
 
 }
 
-void RenderItem::render() {
+void RenderItem::render(float time) {
 
 }
 

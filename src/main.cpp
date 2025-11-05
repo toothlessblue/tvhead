@@ -61,7 +61,7 @@ int main() {
     ImageItem item;
     pipeline.addItem(&item);
 
-    int targetFPS = 10;
+    int targetFPS = 30;
     int targetTimeMilliseconds = 1000000.0f / targetFPS;
 
     printf("Starting main loop\n");

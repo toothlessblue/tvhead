@@ -11,5 +11,5 @@ class ImageItem : public RenderItem {
     public:
         ImageItem();
 
-        void render() override;
+        void render(float time) override;
 };

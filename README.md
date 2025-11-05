@@ -17,5 +17,7 @@ For OpenGL/EGL
 29/10/25 - instructions from https://github.com/matusnovak/rpi-opengl-without-x
 
 ```
-sudo apt-get install libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libdrm-dev 
+sudo apt-get install libegl1-mesa-dev libgbm-dev libgles2-mesa-dev libdrm-dev libglm-dev 
 ```
+
+// TODO add all instructions for RPi setup, add fix for RPi refusing to render without a screen plugged in

@@ -1,5 +1,6 @@
 #include "image-item.hpp"
 #include <GLES3/gl3.h>
+#include <cstdio>
 
 const char *simple_vert = R"(
     #version 300 es
@@ -23,8 +24,12 @@ const char *simple_frag = R"(
     in vec2 frag_uv;
     out vec4 COLOR;
 
-    void main() { 
-        COLOR = vec4(frag_uv / 4.0, 0.0, 1.0); 
+    uniform float time;
+
+    void main() {
+        vec2 colors = mod(frag_uv + vec2(time, 0), 1.0);
+
+        COLOR = vec4(colors / 4.0, 0.0, 1.0); 
     }
 )";
 
@@ -57,8 +62,9 @@ ImageItem::ImageItem() : shader(simple_vert, simple_frag) {
                           (void *)(2 * sizeof(float)));
 }
 
-void ImageItem::render() {
+void ImageItem::render(float time) {
     this->shader.use();
+    this->shader.setUniform("time", time);
 
     glBindVertexArray(this->vao);
     glDrawArrays(GL_TRIANGLES, 0, 6);

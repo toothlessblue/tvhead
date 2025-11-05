@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 class RenderItem {
     public:
         int zIndex = 0;
@@ -8,5 +9,5 @@ class RenderItem {
 
         virtual void tick();
 
-        virtual void render();
+        virtual void render(float time);
 };

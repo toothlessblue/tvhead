@@ -2,7 +2,9 @@
 #include <GLES3/gl3.h>
 #include <algorithm>
 
-RenderPipeline::RenderPipeline() {}
+RenderPipeline::RenderPipeline() {
+    this->startTime = std::chrono::steady_clock::now();
+}
 
 void RenderPipeline::addItem(RenderItem *item) {
     this->renderItems.push_back(item);
@@ -24,8 +26,11 @@ void RenderPipeline::tick() {
 void RenderPipeline::render() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
+    auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - this->startTime).count() / 1000.0f;
+
     for (auto item : this->renderItems) {
-        item->render();
+        item->render(time);
     }
 }
 
